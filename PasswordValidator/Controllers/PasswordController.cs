@@ -5,7 +5,7 @@ using PasswordValidator.Application.UseCases;
 namespace PasswordValidator.Controllers
 {
     [ApiController]
-    [Route("password-validator")]
+    [Route("password")]
     public class PasswordController : ControllerBase
     {
         
