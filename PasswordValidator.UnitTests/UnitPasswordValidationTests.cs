@@ -3,7 +3,6 @@ using PasswordValidator.Application.UseCases;
 using PasswordValidator.Application.UseCases.Implamentations;
 using PasswordValidator.Domain.Rules;
 using PasswordValidator.Domain.Rules.Implementations;
-using Xunit;
 
 namespace PasswordValidator.UnitTests
 {

@@ -1,6 +1,5 @@
 using PasswordValidator.Application.DTOs;
 using PasswordValidator.Domain.Models;
-using System.Linq;
 
 namespace PasswordValidator.Application.Mappers.implementations
 {
@@ -8,8 +7,6 @@ namespace PasswordValidator.Application.Mappers.implementations
     {
         public PasswordResponseDTO ToDto(PasswordResponse model)
         {
-            if (model == null) return null;
-
             return new PasswordResponseDTO
             {
                 valid = model.valid,
