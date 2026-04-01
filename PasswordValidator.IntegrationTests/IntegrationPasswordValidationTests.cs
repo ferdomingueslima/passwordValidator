@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 using PasswordValidator.Application.DTOs;
 using System.Net.Http.Json;
 

@@ -9,12 +9,12 @@ namespace PasswordValidator.Controllers
     [Route("password")]
     public class PasswordController : ControllerBase
     {
-        
+
         private readonly ILogger<PasswordController> _logger;
         private readonly IPasswordValidationUseCase _passwordValidation;
         private readonly IPasswordResponseMapper _mapper;
 
-        public PasswordController(ILogger<PasswordController> logger, IPasswordValidationUseCase 
+        public PasswordController(ILogger<PasswordController> logger, IPasswordValidationUseCase
             passwordValidation, IPasswordResponseMapper mapper)
         {
             _logger = logger;
@@ -32,12 +32,12 @@ namespace PasswordValidator.Controllers
 
                 return Ok(responseDTO);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError(ex, "Erro inesperado ao validar senha.");
                 return StatusCode(StatusCodes.Status500InternalServerError, "Ocorreu um erro interno ao processar a validação. Erro: " + ex.Message);
             }
-            
+
         }
     }
 }

@@ -1,9 +1,9 @@
-using PasswordValidator.Domain.Rules.Implementations;
-using PasswordValidator.Domain.Rules;
-using PasswordValidator.Application.UseCases;
-using PasswordValidator.Application.UseCases.Implamentations;
 using PasswordValidator.Application.Mappers;
 using PasswordValidator.Application.Mappers.implementations;
+using PasswordValidator.Application.UseCases;
+using PasswordValidator.Application.UseCases.Implamentations;
+using PasswordValidator.Domain.Rules;
+using PasswordValidator.Domain.Rules.Implementations;
 
 var builder = WebApplication.CreateBuilder(args);
 

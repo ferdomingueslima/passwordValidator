@@ -23,8 +23,6 @@ namespace PasswordValidator.Application.UseCases.Implamentations
             //Possibilidade de incluir métricas. Quais validações falham? Quais falham mais?
             foreach (var rule in _rules)
             {
-                
-
                 if (!rule.Validate(password))
                 {
                     errors.Add(new ValidationError

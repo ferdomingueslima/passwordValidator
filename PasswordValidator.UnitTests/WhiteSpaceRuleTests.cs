@@ -1,5 +1,4 @@
 using PasswordValidator.Domain.Rules.Implementations;
-using Xunit;
 
 namespace PasswordValidator.UnitTests
 {
