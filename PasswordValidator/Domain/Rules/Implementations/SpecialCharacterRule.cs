@@ -2,6 +2,9 @@
 {
     public class SpecialCharacterRule : IPasswordRule
     {
+        public string Rule => "SPECIAL_CHARACTER";
+        public string Message => "A senha deve ter ao menos um caracter especial";
+
         private readonly string _specials = "!@#$%^&*()-+";
         public bool Validate(string password)
         {

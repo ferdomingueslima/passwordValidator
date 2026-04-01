@@ -2,6 +2,8 @@
 {
     public class LowercaseRule : IPasswordRule
     {
+        public string Rule => "LOWERCASE";
+        public string Message => "A senha deve ter ao menos uma letra minúscula";
         public bool Validate(string password)
         {
             //return password.Any(char.IsLower);

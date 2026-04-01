@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.VisualStudio.TestPlatform.TestHost;
-using PasswordValidator.Application.Models;
+using PasswordValidator.Application.DTOs;
 using System.Net.Http.Json;
-using Xunit;
 
 namespace PasswordValidator.IntegrationTests
 {
@@ -34,7 +33,7 @@ namespace PasswordValidator.IntegrationTests
         {
             var client = _factory.CreateClient();
 
-            var request = new PasswordRequest { Password = password };
+            var request = new PasswordRequestDTO { Password = password };
 
             var response = await client.PostAsJsonAsync("/password/validate", request);
 

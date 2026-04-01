@@ -2,6 +2,10 @@
 {
     public class DigitRule : IPasswordRule
     {
+
+        public string Rule => "DIGIT";
+        public string Message => "A senha deve ter ao menos um número";
+
         public bool Validate(string password)
         {
             //return password.Any(char.IsDigit);

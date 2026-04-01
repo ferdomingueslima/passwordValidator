@@ -100,25 +100,13 @@ Essa abordagem segue o padrão **Strategy Pattern**, onde cada regra representa 
 
 ### Orquestração centralizada
 
-A classe `PasswordValidation` é responsável por executar todas as regras e consolidar o resultado.
+A classe `PasswordValidationUseCase` é responsável por executar todas as regras e consolidar o resultado.
 
 Essa separação garante:
 
 * Clareza de responsabilidades.
 * Facilidade de manutenção.
 * Melhor organização do domínio.
-
----
-
-### UseCase como ponto de entrada da regra de negócio
-
-O `ValidatePasswordUseCase` atua como orquestrador da aplicação:
-
-* Recebe a entrada.
-* Executa a validação.
-* Realiza logging.
-
-Essa abordagem mantém o controller simples e desacoplado da lógica de negócio.
 
 ---
 

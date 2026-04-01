@@ -2,8 +2,11 @@ using PasswordValidator.Domain.Rules.Implementations;
 using PasswordValidator.Domain.Rules;
 using PasswordValidator.Application.UseCases;
 using PasswordValidator.Application.UseCases.Implamentations;
+using PasswordValidator.Application.Mappers;
+using PasswordValidator.Application.Mappers.implementations;
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 
@@ -17,7 +20,9 @@ builder.Services.AddScoped<IPasswordRule, LowercaseRule>();
 builder.Services.AddScoped<IPasswordRule, DigitRule>();
 builder.Services.AddScoped<IPasswordRule, SpecialCharacterRule>();
 builder.Services.AddScoped<IPasswordRule, RepeatedCharacterRule>();
-builder.Services.AddScoped<IPasswordValidation, PasswordValidation>();
+builder.Services.AddScoped<IPasswordRule, WhiteSpaceRule>();
+builder.Services.AddScoped<IPasswordValidationUseCase, PasswordValidationUseCase>();
+builder.Services.AddSingleton<IPasswordResponseMapper, PasswordResponseMapper>();
 
 var app = builder.Build();
 
@@ -35,3 +40,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+public partial class Program { }

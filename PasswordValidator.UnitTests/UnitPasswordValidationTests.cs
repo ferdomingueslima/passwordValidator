@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Logging.Abstractions;
 using PasswordValidator.Application.UseCases;
 using PasswordValidator.Application.UseCases.Implamentations;
 using PasswordValidator.Domain.Rules;
@@ -9,11 +10,11 @@ namespace PasswordValidator.UnitTests
     public class UnitPasswordValidationTests
     {
 
-        private readonly IPasswordValidation _passwordValidation;
-        
+        private readonly IPasswordValidationUseCase _passwordValidation;
+
         public UnitPasswordValidationTests()
         {
-            //Arrange
+            // Arrange
             var rules = new IPasswordRule[]
             {
                 new MinLengthRule(),
@@ -24,7 +25,9 @@ namespace PasswordValidator.UnitTests
                 new RepeatedCharacterRule(),
                 new WhiteSpaceRule()
             };
-            _passwordValidation = new PasswordValidation(rules);
+
+            var logger = NullLogger<PasswordValidationUseCase>.Instance;
+            _passwordValidation = new PasswordValidationUseCase(rules, logger);
         }
 
         public static IEnumerable<object[]> PasswordScenarios =>
@@ -48,7 +51,7 @@ namespace PasswordValidator.UnitTests
             var result = _passwordValidation.isValid(password);
 
             // Assert
-            Assert.Equal(expected, result);
+            Assert.Equal(expected, result.valid);
         }
     }
 }
